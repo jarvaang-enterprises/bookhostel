@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/book_logo"
+        android:layout_width="80dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="32dp"
+        android:background="#E6A67D"
+        android:contentDescription="@string/book_hostel_logo_alt_text"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_logo" />
+
+    <TextView
+        android:id="@+id/book_hostel_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/login_banner"
+        android:textAlignment="center"
+        android:textColor="#D84315"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_logo" />
+
+    <LinearLayout
+        android:id="@+id/choice_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        android:background="#8F8F8F"
+        android:backgroundTint="#615E5E"
+        android:backgroundTintMode="add"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_hostel_banner">
+
+        <ImageView
+            android:id="@+id/student_art"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:contentDescription="@string/hostel_man_alt"
+            app:srcCompat="@drawable/ic_account_art" />
+
+        <TextView
+            android:id="@+id/student_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/student_text"
+            android:textAlignment="center"
+            android:textColor="#D84315"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/register_btn_text"
+                app:layout_constraintEnd_toStartOf="@+id/btn_student_login"
+                app:layout_constraintHorizontal_bias="0.219"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:background="#2E6705"
+                android:backgroundTint="#2D6010"
+                android:backgroundTintMode="src_atop"
+                android:text="@string/login_btn_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_student_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/register_btn_text"
+                app:layout_constraintEnd_toStartOf="@+id/btn_student_login"
+                app:layout_constraintHorizontal_bias="0.219"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_student_login"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:background="#2E6705"
+                android:backgroundTint="#2D6010"
+                android:backgroundTintMode="src_atop"
+                android:text="@string/login_btn_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#EF6C00" />
+
+        <ImageView
+            android:id="@+id/student_art2"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:contentDescription="@string/hostel_man_alt"
+            app:srcCompat="@drawable/ic_account_art" />
+
+        <TextView
+            android:id="@+id/hostel_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hostel_man"
+            android:textAlignment="center"
+            android:textColor="#D84315"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_man_login"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:background="#2E6705"
+                android:backgroundTint="#2D6010"
+                android:backgroundTintMode="src_atop"
+                android:text="@string/login_btn_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_man_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/register_btn_text"
+                app:layout_constraintEnd_toStartOf="@+id/btn_man_login"
+                app:layout_constraintHorizontal_bias="0.219"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

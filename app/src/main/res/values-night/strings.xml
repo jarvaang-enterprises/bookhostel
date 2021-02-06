@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_banner">Welcome to Book Hostel</string>
+    <string name="book_hostel_logo_alt_text">Logo Alt Text</string>
+</resources>

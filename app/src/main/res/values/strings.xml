@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Book Hostel</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_banner">Welcome to Book Hostel</string>
+    <string name="book_hostel_logo_alt_text">Logo Alt Text</string>
+    <string name="student_text">STUDENT</string>
+    <string name="register_btn_text">Register</string>
+    <string name="login_btn_text">Log In</string>
+    <string name="hostel_man">Hostel Manager</string>
+    <string name="hostel_man_alt">img_alt</string>
+</resources>
