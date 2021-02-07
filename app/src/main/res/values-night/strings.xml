@@ -3,4 +3,11 @@
     <string name="login_banner">Welcome to Book Hostel</string>
     <string name="book_hostel_logo_alt_text">Logo Alt Text</string>
     <string name="main_continue">Continue</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="address">Address:</string>
+    <string name="city">City</string>
+    <string name="email">Email Address:</string>
+    <string name="register">Register</string>
 </resources>

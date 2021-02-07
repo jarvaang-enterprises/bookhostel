@@ -1,14 +1,7 @@
 package lan.tmsystem.bookhostel.data;
 
-import android.util.Log;
-import android.widget.TextView;
-
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import lan.tmsystem.bookhostel.LoginActivity;
 
 public class DataManager {
     private static volatile DataManager instance;
@@ -37,7 +30,6 @@ public class DataManager {
     }
 
     public void setCurrentUser(FirebaseUser currentUser) {
-        setUser(new UserModel(currentUser));
         mCurrentUser = currentUser;
     }
 

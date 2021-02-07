@@ -1,5 +1,6 @@
 package lan.tmsystem.bookhostel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,13 +12,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
 import lan.tmsystem.bookhostel.data.DataManager;
+import lan.tmsystem.bookhostel.data.UserModel;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mTextPassword;
     private EditText mTextEmail;
     private boolean mIsStudent;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore mDb;
+    private String mCollection;
 
     @Override
     public void onBackPressed() {
@@ -41,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mDm = DataManager.getInstance();
+        mDb = FirebaseFirestore.getInstance();
 
         mTextEmail = findViewById(R.id.txtEmail);
         mTextPassword = findViewById(R.id.txtPassword);
@@ -61,11 +72,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getLoginType() {
         Intent i = getIntent();
-        switch (i.getExtras().getBundle("type").getInt("type")) {
+        switch (i.getExtras().getBundle("type").getInt("loginType")) {
             case 0:
+                mCollection = "users";
                 mIsStudent = true;
                 break;
             case 1:
+                mCollection = "hostel_man";
                 mIsStudent = false;
                 break;
             default:
@@ -88,19 +101,38 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("success", "signInWithEmail:success");
                             mDm.setCurrentUser(mDm.mAuth.getCurrentUser());
                             mDm.loggedIn = true;
-                            updateUI(mDm.getCurrentUser(), false, "");
+                            getUserData(mDm.getUser().getUid(), mDm.getCurrentUser());
                         } else {
                             Log.e("error", "signInWithEmail:failure", task.getException());
                             mDm.loggedIn = false;
-                            updateUI(null, true, Objects.requireNonNull(task.getException()).getMessage());
+                            updateUI(null, true, Objects.requireNonNull(task.getException()).getMessage(), null);
                         }
                     });
         }
     }
 
-    private void updateUI(FirebaseUser currentUser, boolean error, String message) {
+    private void getUserData(String uid, FirebaseUser currentUser) {
+        mDb.collection(mCollection)
+                .whereEqualTo("userId", uid)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())){
+                                if(Objects.requireNonNull(document.get("userId")).toString().equals(uid)){
+                                    mDm.setUser(new UserModel(currentUser, document));
+                                    updateUI(mDm.getCurrentUser(), false, "", document);
+                                }
+                            }
+                        }
+                    }
+                });
+    }
+
+    private void updateUI(FirebaseUser currentUser, boolean error, String message, QueryDocumentSnapshot document) {
         mPBar.setVisibility(View.INVISIBLE);
-        if (currentUser != null && !error) {
+        if (currentUser != null && !error && document != null) {
             Intent data = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(data);
         } else {
