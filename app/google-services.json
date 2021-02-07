@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "256159505562",
+    "project_id": "book-hostel",
+    "storage_bucket": "book-hostel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256159505562:android:c16aa3a8fc7efa03e41323",
+        "android_client_info": {
+          "package_name": "lan.tmsystem.bookhostel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256159505562-nfil48bbgbetbocg2d6l0csho5f28ip0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lan.tmsystem.bookhostel",
+            "certificate_hash": "c4103bc6ab955b6f88f42d0bfe8851ef5aa83223"
+          }
+        },
+        {
+          "client_id": "256159505562-qtmt2ajeartjqjp5vtqaplgdoe7u16hm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9OzJujwRN0Z9fF4Czw6Vl8VkPvT_C8ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "256159505562-qtmt2ajeartjqjp5vtqaplgdoe7u16hm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

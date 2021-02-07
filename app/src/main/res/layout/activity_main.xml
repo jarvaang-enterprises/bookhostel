@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <ImageView
@@ -54,10 +55,12 @@
         android:paddingTop="15dp"
         android:paddingEnd="15dp"
         android:paddingBottom="15dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_hostel_banner">
+        app:layout_constraintTop_toBottomOf="@+id/book_hostel_banner"
+        tools:visibility="gone">
 
         <ImageView
             android:id="@+id/student_art"
@@ -180,6 +183,64 @@
                 android:text="@string/register_btn_text"
                 app:layout_constraintEnd_toStartOf="@+id/btn_man_login"
                 app:layout_constraintHorizontal_bias="0.219"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#8F8F8F"
+        android:backgroundTint="#615E5E"
+        android:backgroundTintMode="add"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/book_hostel_banner"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/student_img"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:contentDescription="@string/hostel_man_alt"
+            app:srcCompat="@drawable/ic_account_art" />
+
+        <TextView
+            android:id="@+id/student_login_display_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/student_text"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000">
+
+            <Button
+                android:id="@+id/btn_student_login_continue"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#2E6705"
+                android:backgroundTint="#2D6010"
+                android:backgroundTintMode="src_atop"
+                android:text="@string/main_continue"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

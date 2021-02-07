@@ -2,4 +2,5 @@
 <resources>
     <string name="login_banner">Welcome to Book Hostel</string>
     <string name="book_hostel_logo_alt_text">Logo Alt Text</string>
+    <string name="main_continue">Continue</string>
 </resources>

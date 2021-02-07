@@ -16,4 +16,11 @@
     <string name="login_btn_text">Log In</string>
     <string name="hostel_man">Hostel Manager</string>
     <string name="hostel_man_alt">img_alt</string>
+    <string name="temp">temp</string>
+    <string name="user_profile_img">User Profile Img</string>
+    <string name="location_edit">location_edit</string>
+    <string name="location_add">location_add</string>
+    <string name="connection_lost">No connection to google servers.</string>
+    <string name="no_user">Unknown Credentials!</string>
+    <string name="main_continue">Continue</string>
 </resources>
