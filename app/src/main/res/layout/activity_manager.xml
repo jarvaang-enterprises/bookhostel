@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manager_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_hostels_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#CF3737"
+        android:paddingLeft="48dp"
+        android:paddingTop="30dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_hotels"
+            android:layout_width="64dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_upgrade_24" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/upload_hostel_info"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/img_hotels"
+            app:layout_constraintStart_toStartOf="@+id/img_hotels"
+            app:layout_constraintTop_toBottomOf="@+id/img_hotels" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_rates"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:background="#CF3737"
+        android:paddingLeft="48dp"
+        android:paddingTop="30dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_hostels_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_hostels_info"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_user"
+            android:layout_width="64dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_stars_24" />
+
+        <TextView
+            android:id="@+id/account_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/account"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/ic_user"
+            app:layout_constraintStart_toStartOf="@+id/ic_user"
+            app:layout_constraintTop_toBottomOf="@+id/ic_user" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#CF3737"
+        android:paddingLeft="48dp"
+        android:paddingTop="30dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_hostels_info"
+        app:layout_constraintStart_toStartOf="@+id/btn_hostels_info"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hostels_info">
+
+        <ImageView
+            android:id="@+id/ic_settings"
+            android:layout_width="64dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+        <TextView
+            android:id="@+id/text_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/settings"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_settings" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_status"
+        android:layout_width="162dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="24dp"
+        android:background="#CF3737"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_rates"
+        app:layout_constraintStart_toStartOf="@+id/btn_rates"
+        app:layout_constraintTop_toBottomOf="@+id/btn_rates">
+
+        <ImageView
+            android:id="@+id/ic_simile"
+            android:layout_width="64dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_update_24" />
+
+        <TextView
+            android:id="@+id/status_label"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:lines="2"
+            android:text="@string/update_existing_info"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_simile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_bookings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#CF3737"
+        android:paddingLeft="48dp"
+        android:paddingTop="30dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_settings"
+        app:layout_constraintStart_toStartOf="@+id/btn_settings"
+        app:layout_constraintTop_toBottomOf="@+id/btn_settings">
+
+        <ImageView
+            android:id="@+id/ic_bookings"
+            android:layout_width="64dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_collections_bookmark_24" />
+
+        <TextView
+            android:id="@+id/settings_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/bookings_made"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_bookings" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

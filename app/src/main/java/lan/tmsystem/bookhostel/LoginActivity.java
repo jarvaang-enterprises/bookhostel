@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mTextPassword;
     private EditText mTextEmail;
     private boolean mIsStudent;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore mDb;
     private String mCollection;
 
@@ -95,11 +95,11 @@ public class LoginActivity extends AppCompatActivity {
             error += "Password required";
             errors.setText(error);
         } else {
-            mDm.mAuth.signInWithEmailAndPassword(email, passwd)
+            mDm.getAuth().signInWithEmailAndPassword(email, passwd)
                     .addOnCompleteListener(LoginActivity.this, task -> {
                         if (task.isSuccessful()) {
                             Log.d("success", "signInWithEmail:success");
-                            mDm.setCurrentUser(mDm.mAuth.getCurrentUser());
+                            mDm.setCurrentUser(mDm.getAuth().getCurrentUser());
                             mDm.loggedIn = true;
                             getUserData(mDm.getUser().getUid(), mDm.getCurrentUser());
                         } else {

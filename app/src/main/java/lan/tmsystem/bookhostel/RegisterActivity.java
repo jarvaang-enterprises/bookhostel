@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -102,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                mDm.mAuth = mAuth;
+                                mDm.setAuth(mAuth);
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 assert user != null;
                                 saveUserDetails(user);

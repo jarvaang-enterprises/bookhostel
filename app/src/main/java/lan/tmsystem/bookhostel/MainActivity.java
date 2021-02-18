@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -30,20 +29,19 @@ import lan.tmsystem.bookhostel.data.UserModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final int LOGIN_RESPONSE = 999;
     private final DataManager mDm = DataManager.getInstance();
     private LinearLayout mLogin;
     private LinearLayout mChoice;
     private ImageView mStdImg;
     private TextView mStdDisplayName;
-    private FirebaseAuth mAuth;
+    private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final FirebaseFirestore mDb = FirebaseFirestore.getInstance();
 
     @Override
     protected void onStart() {
         super.onStart();
-        mAuth = FirebaseAuth.getInstance();
-        mDm.mAuth = mAuth;
+        mDm.setAuth(mAuth);
+        mDm.setDb(mDb);
         final FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             mChoice.setVisibility(View.INVISIBLE);

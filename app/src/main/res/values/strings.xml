@@ -34,4 +34,43 @@
     <string name="bh_logo">bh_logo</string>
     <string name="hostel_name">Hostel Name</string>
     <string name="back_button">Back Button</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="home_label">| Home |</string>
+    <string name="hostels">Hostels</string>
+    <string name="account">Account</string>
+    <string name="settings">Settings</string>
+    <string name="payment">Payment</string>
+    <string name="status_of_your_booking">Status of your booking</string>
+    <string name="upload_hostel_info">Upload Hostel Info</string>
+    <string name="update_existing_info">Update Existing Info</string>
+    <string name="bookings_made">Bookings Made</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="change_font_style">Change Font Style</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="hostel_location">Hostel Location</string>
+    <string name="view_hostel_details">View Hostel Details</string>
+    <string name="overall_rating">Overall Rating</string>
+    <string name="more_item">More Item</string>
+    <string name="book">Book</string>
+    <string name="room_price">Room Price</string>
+    <string name="room_description">Room Description</string>
+    <string name="room_image">room Image</string>
+    <string name="hostel_rooms">Hostel Rooms</string>
+    <string name="booked_by_female_student">Booked by Female Student</string>
+    <string name="wanting_female_roommate">Wanting Female Roommate</string>
 </resources>

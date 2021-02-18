@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:id="@+id/btn_chg_theme2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="#FF1414"
+        android:fontFamily="@font/rubik_light"
+        android:gravity="center"
+        android:text="@string/change_theme"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="@+id/btn_chg_theme"
+        app:layout_constraintStart_toStartOf="@+id/btn_chg_theme"
+        app:layout_constraintTop_toBottomOf="@+id/btn_chg_theme" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/setting_activity_txt"
+        android:layout_width="229dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#F40E0E"
+        android:fontFamily="@font/rubik_light"
+        android:lineSpacingExtra="14sp"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/btn_chg_font"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
+        android:background="#FF1414"
+        android:fontFamily="@font/rubik_light"
+        android:gravity="center"
+        android:text="@string/change_font_style"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="@+id/setting_activity_txt"
+        app:layout_constraintStart_toStartOf="@+id/setting_activity_txt"
+        app:layout_constraintTop_toBottomOf="@+id/setting_activity_txt" />
+
+    <TextView
+        android:id="@+id/btn_chg_theme"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="#FF1414"
+        android:fontFamily="@font/rubik_light"
+        android:gravity="center"
+        android:text="@string/change_theme"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="@+id/btn_chg_font"
+        app:layout_constraintStart_toStartOf="@+id/btn_chg_font"
+        app:layout_constraintTop_toBottomOf="@+id/btn_chg_font" />
+</androidx.constraintlayout.widget.ConstraintLayout>

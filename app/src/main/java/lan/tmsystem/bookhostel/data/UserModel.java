@@ -27,23 +27,10 @@ public class UserModel implements Parcelable {
     private final boolean manager;
     private final String hostel;
     private final String phoneNumber;
-    private final GeoPoint location;
+    private GeoPoint location;
 
-    public UserModel(@NotNull FirebaseUser user) {
-        this.displayName = user.getDisplayName();
-        this.email = user.getEmail();
-        this.photoUrl = user.getPhotoUrl();
-        this.emailVerified = user.isEmailVerified();
-        this.uid = user.getUid();
-        this.country = "";
-        this.city = "";
-        this.manager = false;
-        this.hostel = "";
-        this.phoneNumber = "";
-        this.location = new GeoPoint(0.0,0.0);
-        this.lastName = "";
-        this.firstName = "";
-
+    public void updateLocation(double lat, double lng){
+        this.location = new GeoPoint(lat, lng);
     }
 
     public UserModel(@NotNull FirebaseUser user, DocumentSnapshot document) {
