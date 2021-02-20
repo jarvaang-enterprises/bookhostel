@@ -38,8 +38,14 @@ public class HomeActivity extends AppCompatActivity {
         mStudentLayout = findViewById(R.id.std_layout);
         mManagerLayout = findViewById(R.id.man_layout);
         ConstraintLayout btnSettings = findViewById(R.id.btn_settings);
+        ConstraintLayout btnStatus = findViewById(R.id.btn_status);
 
         btnSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        btnStatus.setOnClickListener(v->{
 
         });
 
