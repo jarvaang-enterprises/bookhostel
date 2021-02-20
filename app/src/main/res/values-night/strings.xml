@@ -11,4 +11,5 @@
     <string name="email">Email Address:</string>
     <string name="register">Register</string>
     <string name="home_label">| Home |</string>
+    <string name="location_name_get_error">An error occurred  Getting location</string>
 </resources>

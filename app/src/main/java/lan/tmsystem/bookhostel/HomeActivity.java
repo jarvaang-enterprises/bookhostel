@@ -38,15 +38,22 @@ public class HomeActivity extends AppCompatActivity {
         mStudentLayout = findViewById(R.id.std_layout);
         mManagerLayout = findViewById(R.id.man_layout);
         ConstraintLayout btnSettings = findViewById(R.id.btn_settings);
-        ConstraintLayout btnStatus = findViewById(R.id.btn_status);
+        ConstraintLayout btnPayemnt = findViewById(R.id.btn_payment);
+        ConstraintLayout btnHostels = findViewById(R.id.btn_hostels);
 
         btnSettings.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
 
-        btnStatus.setOnClickListener(v->{
+        btnPayemnt.setOnClickListener(v->{
+//            Intent intent = new Intent(HomeActivity.this, PaymentsActivity.class);
+//            startActivity(intent);
+        });
 
+        btnHostels.setOnClickListener(v->{
+            Intent intent = new Intent(HomeActivity.this, HostelsActivity.class);
+            startActivity(intent);
         });
 
         setUserDetails();

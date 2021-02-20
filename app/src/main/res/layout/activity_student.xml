@@ -44,7 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_fully"
+        android:id="@+id/btn_hostels"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#CF3737"
@@ -85,9 +85,9 @@
         android:paddingTop="30dp"
         android:paddingRight="48dp"
         android:paddingBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_fully"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_hostels"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_fully"
+        app:layout_constraintStart_toEndOf="@+id/btn_hostels"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -120,9 +120,9 @@
         android:paddingTop="30dp"
         android:paddingRight="48dp"
         android:paddingBottom="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_fully"
-        app:layout_constraintStart_toStartOf="@+id/btn_fully"
-        app:layout_constraintTop_toBottomOf="@+id/btn_fully">
+        app:layout_constraintEnd_toEndOf="@+id/btn_hostels"
+        app:layout_constraintStart_toStartOf="@+id/btn_hostels"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hostels">
 
         <ImageView
             android:id="@+id/ic_payments"

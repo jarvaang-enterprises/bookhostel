@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -143,6 +144,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                             DocumentSnapshot document = documentReference.get().getResult();
                             assert document != null;
                             updateUI(user, document);
+                            if(!mIsStudent) {
+                                saveHostelData(user.getUid());
+                            }
                         }
                     }
                 })
@@ -151,6 +155,20 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     public void onFailure(@NonNull Exception e) {
                         Log.w("userData:", "Error adding document", e);
                         saveUserDetails(user);
+                    }
+                });
+    }
+
+    private void saveHostelData(String uid) {
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("userId", uid);
+        userData.put("name", mTextHostelName.getText().toString());
+        userData.put("location", new GeoPoint(0.0,0.0));
+        mDb.collection("hostels")
+                .add(userData)
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        Log.d("up_hostel","Hostel Upload Successful");
                     }
                 });
     }
