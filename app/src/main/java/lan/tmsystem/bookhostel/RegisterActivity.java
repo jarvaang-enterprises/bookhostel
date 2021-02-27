@@ -180,7 +180,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userData.put("name", mTextHostelName.getText().toString());
         userData.put("location", new GeoPoint(0.0,0.0));
         userData.put("price", mTextHostelPrice.getText().toString());
-        userData.put("num")
+        userData.put("numSingles", mTextHostelSinglesAv.getText().toString());
+        userData.put("numDoubles", mTextHostelDoublesAv.getText().toString());
         mDb.collection("hostels")
                 .add(userData)
                 .addOnCompleteListener(task -> {
