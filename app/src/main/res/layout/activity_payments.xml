@@ -134,13 +134,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/text_phone_number_pA"
                 android:layout_width="318dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="Phone Number"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
@@ -152,9 +152,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Pay UGX 700,000"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                app:layout_constraintEnd_toEndOf="@+id/text_phone_number_pA"
+                app:layout_constraintStart_toStartOf="@+id/text_phone_number_pA"
+                app:layout_constraintTop_toBottomOf="@+id/text_phone_number_pA" />
 
             <ImageView
                 android:id="@+id/imageView8"

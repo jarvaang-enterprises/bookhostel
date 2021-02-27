@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#020202">
 
     <ImageView
         android:id="@+id/img_hostel"
@@ -15,14 +16,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@mipmap/ic_channel" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#D5D2D2"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/img_hostel"
@@ -35,6 +36,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/hostel_name"
+            android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/hostel_location"
+            android:textColor="#979797"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/text_hostels_name"
             app:layout_constraintHorizontal_bias="0.0"
@@ -55,10 +58,11 @@
             android:id="@+id/link_to_hostel"
             android:layout_width="151dp"
             android:layout_height="62dp"
+            android:background="@color/purple_200"
             android:lines="2"
             android:maxLines="2"
             android:text="@string/view_hostel_details"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.84"

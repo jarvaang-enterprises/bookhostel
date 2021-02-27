@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/img_hostel_room"
         android:layout_width="136dp"
         android:layout_height="147dp"
         android:layout_marginBottom="16dp"
@@ -14,10 +14,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@mipmap/ic_channel" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_room_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -25,25 +25,25 @@
         android:layout_marginEnd="8dp"
         android:text="@string/room_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+        app:layout_constraintStart_toEndOf="@+id/img_hostel_room"
+        app:layout_constraintTop_toTopOf="@+id/img_hostel_room" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_room_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/room_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toStartOf="@+id/txt_room_description"
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_description" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_book_room"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/book"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toStartOf="@+id/txt_room_price"
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_price" />
 </androidx.constraintlayout.widget.ConstraintLayout>

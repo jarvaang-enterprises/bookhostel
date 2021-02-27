@@ -38,20 +38,32 @@ public class HomeActivity extends AppCompatActivity {
         mStudentLayout = findViewById(R.id.std_layout);
         mManagerLayout = findViewById(R.id.man_layout);
         ConstraintLayout btnSettings = findViewById(R.id.btn_settings);
-        ConstraintLayout btnPayemnt = findViewById(R.id.btn_payment);
+        ConstraintLayout btnSettingsMan = findViewById(R.id.btn_settings_man);
+        ConstraintLayout btnPayment = findViewById(R.id.btn_payment);
         ConstraintLayout btnHostels = findViewById(R.id.btn_hostels);
+        ConstraintLayout btnHostelsInfo = findViewById(R.id.btn_hostels_info);
 
         btnSettings.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
 
-        btnPayemnt.setOnClickListener(v->{
+        btnHostelsInfo.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        btnSettingsMan.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        btnPayment.setOnClickListener(v -> {
 //            Intent intent = new Intent(HomeActivity.this, PaymentsActivity.class);
 //            startActivity(intent);
         });
 
-        btnHostels.setOnClickListener(v->{
+        btnHostels.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, HostelsActivity.class);
             startActivity(intent);
         });
@@ -90,22 +102,24 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setUserDetails() {
-        if (mDm.getUser().isManager()) {
-            mStudentLayout.setVisibility(View.INVISIBLE);
-            mManagerLayout.setVisibility(View.VISIBLE);
-            mLocationAdd.setVisibility(View.INVISIBLE);
-            mLocationEdit.setVisibility(View.INVISIBLE);
-        } else {
-            mStudentLayout.setVisibility(View.VISIBLE);
-            mManagerLayout.setVisibility(View.INVISIBLE);
-            mLocationSet = mDm.getUser().getLocation() != null && !mDm.getUser().getLocation().toString().isEmpty();
-            if (mLocationSet) {
+        if (mDm.getUser() != null)
+            if (mDm.getUser().isManager()) {
+                mStudentLayout.setVisibility(View.INVISIBLE);
+                mManagerLayout.setVisibility(View.VISIBLE);
                 mLocationAdd.setVisibility(View.INVISIBLE);
-                mLocationEdit.setVisibility(View.VISIBLE);
-            } else {
-                mLocationAdd.setVisibility(View.VISIBLE);
                 mLocationEdit.setVisibility(View.INVISIBLE);
+            } else {
+                mStudentLayout.setVisibility(View.VISIBLE);
+                mManagerLayout.setVisibility(View.INVISIBLE);
+                mLocationSet = mDm.getUser().getLocation() != null && !mDm.getUser().getLocation().toString().isEmpty();
+                if (mLocationSet) {
+                    mLocationAdd.setVisibility(View.INVISIBLE);
+                    mLocationEdit.setVisibility(View.VISIBLE);
+                } else {
+                    mLocationAdd.setVisibility(View.VISIBLE);
+                    mLocationEdit.setVisibility(View.INVISIBLE);
+                }
             }
-        }
+        else finish();
     }
 }

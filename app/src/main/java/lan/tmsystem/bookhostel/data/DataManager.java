@@ -15,6 +15,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +29,12 @@ public class DataManager {
     private FirebaseUser mCurrentUser;
     private UserModel user;
     private FirebaseFirestore mDb;
+    private FirebaseStorage mStorage;
+
+    // Create a storage reference from our app
+    private StorageReference storageRef;
+    private StorageReference mHostelImagesRef;
+    private StorageReference mUserImagesRef;
 
     private DataManager(){};
 
@@ -39,6 +47,8 @@ public class DataManager {
 
     public void logOut(){
         getAuth().signOut();
+        mCurrentUser = null;
+        user = null;
         loggedIn = false;
     }
 
@@ -101,5 +111,37 @@ public class DataManager {
 
     public void setDb(FirebaseFirestore db) {
         mDb = db;
+    }
+
+    public FirebaseStorage getStorage() {
+        return mStorage;
+    }
+
+    public void setStorage(FirebaseStorage storage) {
+        mStorage = storage;
+    }
+
+    public StorageReference getStorageRef() {
+        return storageRef;
+    }
+
+    public void setStorageRef(StorageReference storageRef) {
+        this.storageRef = storageRef;
+    }
+
+    public StorageReference getHostelImagesRef() {
+        return mHostelImagesRef;
+    }
+
+    public void setHostelImagesRef(StorageReference hostelImagesRef) {
+        mHostelImagesRef = hostelImagesRef;
+    }
+
+    public StorageReference getUserImagesRef() {
+        return mUserImagesRef;
+    }
+
+    public void setUserImagesRef(StorageReference userImagesRef) {
+        mUserImagesRef = userImagesRef;
     }
 }

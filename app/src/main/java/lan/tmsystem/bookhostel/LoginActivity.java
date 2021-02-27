@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("success", "signInWithEmail:success");
                             mDm.setCurrentUser(mDm.getAuth().getCurrentUser());
                             mDm.loggedIn = true;
-                            getUserData(mDm.getUser().getUid(), mDm.getCurrentUser());
+                            getUserData(mDm.getAuth().getCurrentUser().getUid(), mDm.getCurrentUser());
                         } else {
                             Log.e("error", "signInWithEmail:failure", task.getException());
                             mDm.loggedIn = false;

@@ -74,4 +74,5 @@
     <string name="booked_by_female_student">Booked by Female Student</string>
     <string name="wanting_female_roommate">Wanting Female Roommate</string>
     <string name="location_name_get_error">An error occurred  Getting location</string>
+    <string name="log_out">Log Out</string>
 </resources>

@@ -170,9 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:labelFor="@+id/text_hostel_name"
-            android:text="@string/hostel_name"
-            android:visibility="gone"
-            tools:visibility="gone" />
+            android:text="@string/hostel_name" />
 
         <EditText
             android:id="@+id/text_hostel_name"
@@ -180,10 +178,22 @@
             android:layout_height="wrap_content"
             android:autofillHints="hostelName"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="@string/hostel_name"
-            android:visibility="gone"
-            tools:visibility="gone" />
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/text_price_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price" />
+
+        <EditText
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Average Room Price"
+            android:inputType="number" />
 
         <Button
             android:id="@+id/btn_register"

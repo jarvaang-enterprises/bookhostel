@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -85,7 +86,17 @@ public class HostelsActivity extends AppCompatActivity {
             ImageView imgHostel = view.findViewById(R.id.img_hostel);
             TextView textHostelName = view.findViewById(R.id.text_hostels_name);
             TextView textHostelLocation = view.findViewById(R.id.text_hostel_location);
+            TextView linkToHostel = view.findViewById(R.id.link_to_hostel);
 
+            linkToHostel.setOnClickListener(v -> {
+//                Intent intent = new Intent(view.getContext(), HostelRooms.class);
+//                view.getContext().startActivity(intent);
+                Intent intent = new Intent(view.getContext(), PaymentsActivity.class);
+                intent.putExtra("price", data.getPrice().toString());
+                view.getContext().startActivity(intent);
+            });
+
+//            imgHostel.setImageDrawable(Dr);
             textHostelName.setText(data.getName());
             textHostelName.setTextSize(30);
             Geocoder _g = new Geocoder(view.getContext());

@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -36,12 +38,25 @@ public class MainActivity extends AppCompatActivity {
     private TextView mStdDisplayName;
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final FirebaseFirestore mDb = FirebaseFirestore.getInstance();
+    private final FirebaseStorage mStorage = FirebaseStorage.getInstance();// Create a storage reference from our app
+    private final StorageReference storageRef = mStorage.getReference();
+    // Create a child reference
+// imagesRef now points to "images"
+    private final StorageReference mHostelImagesRef = storageRef.child("images/hostels/");
+
+    // Child references can also take paths
+// spaceRef now points to "images/space.jpg
+// imagesRef still points to "images"
+    private final StorageReference mUserImagesRef = storageRef.child("images/users/");
 
     @Override
     protected void onStart() {
         super.onStart();
         mDm.setAuth(mAuth);
         mDm.setDb(mDb);
+        mDm.setStorage(mStorage);
+        mDm.setHostelImagesRef(mHostelImagesRef);
+        mDm.setUserImagesRef(mUserImagesRef);
         final FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             mChoice.setVisibility(View.INVISIBLE);
@@ -70,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                                             UserModel u = mDm.getUser();
                                             mDm.loggedIn = true;
                                             mStdImg.setImageURI(u.getPhotoUrl());
-                                            mStdDisplayName.setText(u.getDisplayName().isEmpty() ? u.getFirstName()+" " +u.getLastName() : u.getDisplayName());
+                                            mStdDisplayName.setText(u.getDisplayName().isEmpty() ? u.getFirstName() + " " + u.getLastName() : u.getDisplayName());
                                             break;
                                         }
                                     }
@@ -100,16 +115,15 @@ public class MainActivity extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mDm.getUser().isManager()) {
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    Bundle type = new Bundle();
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Bundle type = new Bundle();
+                if (!mDm.getUser().isManager()) {
                     type.putInt("loginType", 0);
-                    intent.putExtra("type", type);
-                    startActivity(intent);
                 } else {
-                    Toast.makeText(MainActivity.this, "Hostel Manager Logged In", Toast.LENGTH_LONG).show();
-                    mDm.logOut();
+                    type.putInt("loginType", 1);
                 }
+                intent.putExtra("type", type);
+                startActivity(intent);
             }
         });
 

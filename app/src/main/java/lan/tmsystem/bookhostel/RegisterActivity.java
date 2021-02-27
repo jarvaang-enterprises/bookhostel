@@ -52,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     private ConstraintLayout mLoadingOverLay;
     private boolean mIsStudent;
     private EditText mTextHostelName;
+    private EditText mTextHostelPrice;
     private String mCollection;
     private FirebaseFirestore mDb;
 
@@ -74,6 +75,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         mLoadingOverLay = findViewById(R.id.loading);
         mTextHostelName = findViewById(R.id.text_hostel_name);
         TextView textHostelLabel = findViewById(R.id.text_hostel_label);
+        mTextHostelPrice = findViewById(R.id.txtPrice);
+        TextView textHostelPriceLabel = findViewById(R.id.text_price_label);
         ImageButton btnBack = findViewById(R.id.btnRegisterBack);
 
         mCountry.setOnItemSelectedListener(this);
@@ -91,6 +94,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         if (!mIsStudent) {
             textHostelLabel.setVisibility(View.VISIBLE);
             mTextHostelName.setVisibility(View.VISIBLE);
+            textHostelPriceLabel.setVisibility(View.VISIBLE);
+            mTextHostelPrice.setVisibility(View.VISIBLE);
         }
 
         btnRegister.setOnClickListener(v -> {
@@ -164,6 +169,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userData.put("userId", uid);
         userData.put("name", mTextHostelName.getText().toString());
         userData.put("location", new GeoPoint(0.0,0.0));
+        userData.put("price", mTextHostelPrice.getText().toString());
         mDb.collection("hostels")
                 .add(userData)
                 .addOnCompleteListener(task -> {

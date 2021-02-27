@@ -7,14 +7,14 @@
     tools:context=".SettingsActivity">
 
     <TextView
-        android:id="@+id/btn_chg_theme2"
+        android:id="@+id/btn_logout"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:background="#FF1414"
         android:fontFamily="@font/rubik_light"
         android:gravity="center"
-        android:text="@string/change_theme"
+        android:text="@string/log_out"
         android:textAlignment="center"
         android:textSize="18sp"
         android:typeface="serif"
