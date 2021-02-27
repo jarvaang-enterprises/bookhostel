@@ -75,4 +75,10 @@
     <string name="wanting_female_roommate">Wanting Female Roommate</string>
     <string name="location_name_get_error">An error occurred  Getting location</string>
     <string name="log_out">Log Out</string>
+    <string name="number_of_doubles">Number of Doubles</string>
+    <string name="number_of_single_rooms">Number of Single Rooms</string>
+    <string name="number_of_double_rooms">Number of Double Rooms</string>
+    <string name="number_of_singles">Number of Singles</string>
+    <string name="price_reg">Price</string>
+    <string name="average_room_price">Average Room Price</string>
 </resources>

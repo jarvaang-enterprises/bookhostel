@@ -11,9 +11,11 @@ public class Hostel {
     private String userId;
     private String price;
     private List<HostelRoom> rooms;
+    private String numSingles;
+    private String numDoubles;
 
     public Hostel(){};
-    public Hostel(String name, String price, GeoPoint location, String userId){
+    public Hostel(String name, String price, String numSingles, String numDoubles, GeoPoint location, String userId){
         this.setName(name);
         this.setLocation(location);
         this.setUserId(userId);

@@ -53,6 +53,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     private boolean mIsStudent;
     private EditText mTextHostelName;
     private EditText mTextHostelPrice;
+    private EditText mTextHostelSinglesAv;
+    private EditText mTextHostelDoublesAv;
     private String mCollection;
     private FirebaseFirestore mDb;
 
@@ -77,6 +79,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         TextView textHostelLabel = findViewById(R.id.text_hostel_label);
         mTextHostelPrice = findViewById(R.id.txtPrice);
         TextView textHostelPriceLabel = findViewById(R.id.text_price_label);
+        mTextHostelSinglesAv = findViewById(R.id.txt_singles_available_number);
+        TextView textHostelSinglesAvLabel = findViewById(R.id.txt_singles_av);
+        mTextHostelDoublesAv = findViewById(R.id.txt_doubles_available_num);
+        TextView textHostelDoublesAvLabel = findViewById(R.id.txt_doubles_av);
         ImageButton btnBack = findViewById(R.id.btnRegisterBack);
 
         mCountry.setOnItemSelectedListener(this);
@@ -96,6 +102,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             mTextHostelName.setVisibility(View.VISIBLE);
             textHostelPriceLabel.setVisibility(View.VISIBLE);
             mTextHostelPrice.setVisibility(View.VISIBLE);
+            textHostelDoublesAvLabel.setVisibility(View.VISIBLE);
+            mTextHostelDoublesAv.setVisibility(View.VISIBLE);
+            textHostelSinglesAvLabel.setVisibility(View.VISIBLE);
+            mTextHostelSinglesAv.setVisibility(View.VISIBLE);
         }
 
         btnRegister.setOnClickListener(v -> {
@@ -170,6 +180,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         userData.put("name", mTextHostelName.getText().toString());
         userData.put("location", new GeoPoint(0.0,0.0));
         userData.put("price", mTextHostelPrice.getText().toString());
+        userData.put("num")
         mDb.collection("hostels")
                 .add(userData)
                 .addOnCompleteListener(task -> {

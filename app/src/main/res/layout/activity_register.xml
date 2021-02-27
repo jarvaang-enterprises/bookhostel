@@ -74,7 +74,8 @@
                 android:autofillHints="First Name"
                 android:ems="10"
                 android:hint="@string/first_name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                tools:ignore="LabelFor" />
 
             <EditText
                 android:id="@+id/text_last_name"
@@ -170,7 +171,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:labelFor="@+id/text_hostel_name"
-            android:text="@string/hostel_name" />
+            android:text="@string/hostel_name"
+            android:visibility="gone"
+            tools:visibility="gone" />
 
         <EditText
             android:id="@+id/text_hostel_name"
@@ -179,21 +182,62 @@
             android:autofillHints="hostelName"
             android:ems="10"
             android:hint="@string/hostel_name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_singles_av"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_singles"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/txt_singles_available_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/number_of_single_rooms"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_doubles_av"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_doubles"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <EditText
+            android:id="@+id/txt_doubles_available_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/number_of_double_rooms"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:visibility="gone" />
 
         <TextView
             android:id="@+id/text_price_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Price" />
+            android:text="@string/price_reg"
+            android:visibility="gone"
+            tools:visibility="gone" />
 
         <EditText
             android:id="@+id/txtPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Average Room Price"
-            android:inputType="number" />
+            android:hint="@string/average_room_price"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:visibility="gone" />
 
         <Button
             android:id="@+id/btn_register"
