@@ -172,6 +172,7 @@
                 android:backgroundTint="#2D6010"
                 android:backgroundTintMode="src_atop"
                 android:text="@string/login_btn_text"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
